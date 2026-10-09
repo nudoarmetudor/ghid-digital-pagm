@@ -1,0 +1,126 @@
+@use "./base.scss";
+
+// Ghid digital PAGM: identitatea Lappsus (Urbanist pentru titluri, Onest pentru text,
+// gradientul albastru-coral) cu paleta ProActive Group Moldova (roșu, galben, verde,
+// albastru, mov). Fonturile sunt pe site, sub licența SIL Open Font License.
+
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./static/fonts/urbanist-normal-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Urbanist";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./static/fonts/urbanist-normal-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("./static/fonts/onest-var.woff2") format("woff2");
+}
+
+:root {
+  --ghid-blue: #3b9dd7;
+  --ghid-coral: #e82e61;
+  --ghid-gradient: linear-gradient(135deg, #3b9dd7, #e82e61);
+}
+
+html {
+  font-size: 17px;
+}
+body {
+  font-feature-settings: "kern";
+}
+:root[saved-theme="light"] body {
+  background: #ffffff;
+}
+:root[saved-theme="light"] .page > #quartz-body .sidebar.left {
+  background: #f6f7fa;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+article > h1,
+.page-header h1.article-title {
+  font-size: 2.3rem;
+  line-height: 1.12;
+}
+h2 {
+  margin-top: 2rem;
+}
+
+// Legături: subliniere discretă, nu fundalul gri implicit al Quartz.
+article a.internal {
+  background-color: transparent;
+  padding: 0;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--secondary) 35%, transparent);
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+article a.internal:hover {
+  text-decoration-color: var(--tertiary);
+}
+a.external {
+  text-underline-offset: 3px;
+}
+
+// Liste de verificare: casete mai mari, ușor de bifat pe telefon.
+input[type="checkbox"].checkbox-toggle,
+li.task-list-item input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: #40b93c;
+  vertical-align: -0.15rem;
+}
+
+// Blocurile de cod (prompturile) rup rândul, ca să se citească pe telefon.
+pre > code,
+pre {
+  white-space: pre-wrap !important;
+  word-break: break-word;
+}
+pre {
+  border-radius: 10px;
+}
+
+.callout {
+  border-radius: 10px;
+}
+
+// Explorer și căutare
+.explorer .explorer-content ul li > a,
+.explorer .folder-title {
+  font-family: var(--bodyFont);
+}
+.search > .search-button {
+  border-radius: 10px;
+}
+
+// Pe telefon: margini mai mici, titluri mai mici.
+@media all and (max-width: 800px) {
+  html {
+    font-size: 16px;
+  }
+  article > h1,
+  .page-header h1.article-title {
+    font-size: 1.85rem;
+  }
+}

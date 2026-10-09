@@ -1,0 +1,53 @@
+# Construiește ghidul din sursa/ cu Quartz și pune rezultatul în rădăcina ramurii main,
+# de unde îl servește GitHub Pages ("Deploy from a branch", main, /).
+name: Publică ghidul
+
+on:
+  push:
+    branches: [main]
+    paths: ["sursa/**", ".github/workflows/publica.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publica
+  cancel-in-progress: false
+
+jobs:
+  publica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: sursa/package-lock.json
+
+      - name: Instalează Quartz
+        working-directory: sursa
+        run: npm ci
+
+      - name: Construiește site-ul
+        working-directory: sursa
+        run: npx quartz build -o ../_site
+
+      - name: Copiază site-ul în rădăcină
+        run: bash .github/publica.sh _site
+
+      - name: Salvează dacă s-a schimbat ceva
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nimic nou de publicat."
+          else
+            git commit -m "Publică ghidul ($(git rev-parse --short HEAD))"
+            git push
+          fi
