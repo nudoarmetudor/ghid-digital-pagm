@@ -16,13 +16,14 @@ Ghid interactiv cu instrumente utile pentru asociații și ONG-uri, realizat pen
 | `sursa/quartz/components/ghid/` | Componentele proprii: antet, subsol, pagina principală, fișa instrumentului |
 | `sursa/quartz/styles/custom.scss` | Stilul: fonturile Lappsus (Urbanist, Onest) și paleta PAGM |
 | `sursa/quartz.config.ts`, `sursa/quartz.layout.ts` | Configurarea Quartz 4.5.2 |
-| rădăcina (`index.html`, `static/`, ...) | **Site-ul generat. Nu se editează de mână**, se rescrie la fiecare publicare. |
+| `docs/` | **Site-ul generat**, servit de ghid.lappsus.com. Nu se editează de mână. |
+| rădăcina (`index.html`, `static/`, ...) | Aceeași copie, pentru oglinda de pe GitHub Pages. Lista ei e în `.publicat`. Nu se editează de mână. |
 
 ## Cum se publică
 
-GitHub Pages servește ramura `main`, din rădăcină. La fiecare modificare în `sursa/`,
-fluxul `.github/workflows/publica.yml` construiește site-ul cu Quartz și pune rezultatul
-în rădăcină. Durează câteva minute.
+La fiecare modificare în `sursa/`, fluxul `.github/workflows/publica.yml` construiește
+site-ul cu Quartz și îl pune în `docs/` (servit de ghid.lappsus.com) și în rădăcină
+(oglinda GitHub Pages). Serverul trage `main` și servește doar `docs/`. Durează câteva minute.
 
 ## Lucru local
 
