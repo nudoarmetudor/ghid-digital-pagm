@@ -1,0 +1,6 @@
+# Bibliotecile pentru construieste.py (PDF-ul tipăribil).
+weasyprint==70.0
+markdown-it-py==4.2.0
+mdit-py-plugins==0.6.1
+beautifulsoup4==4.15.0
+PyYAML==6.0.1

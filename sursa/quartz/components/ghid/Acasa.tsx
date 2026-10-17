@@ -92,6 +92,10 @@ const Acasa: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) =>
           <strong>Ce am făcut împreună</strong>
           <span>Pe scurt, sesiunile „AI în Comunități”.</span>
         </a>
+        <a href={`${pathToRoot(aici)}/ghidul-bunelor-practici-ai.pdf`} data-router-ignore>
+          <strong>Ghidul în PDF</strong>
+          <span>Toată cartea, gata de tipărit, cu cuprins.</span>
+        </a>
       </section>
     </div>
   )
