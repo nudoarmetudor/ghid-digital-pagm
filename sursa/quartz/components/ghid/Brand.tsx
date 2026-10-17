@@ -13,7 +13,7 @@ const Brand: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzComponent
         <img class="ghid-logo ghid-logo-light" src={logo("pagm-logo.svg")} alt="ProActive Group Moldova" width="188" height="100" />
         <img class="ghid-logo ghid-logo-dark" src={logo("pagm-logo-dark.svg")} alt="" aria-hidden="true" width="188" height="100" />
         <span class="ghid-brand-title">{cfg.pageTitle}</span>
-        <span class="ghid-brand-scurt">Ghid digital</span>
+        <span class="ghid-brand-scurt">Ghidul Bunelor Practici AI</span>
       </a>
       <div class="ghid-rainbow" aria-hidden="true"><span /><span /><span /><span /><span /></div>
     </div>
@@ -27,7 +27,7 @@ Brand.css = `
 .ghid-logo-dark { display: none; }
 :root[saved-theme="dark"] .ghid-logo-light { display: none; }
 :root[saved-theme="dark"] .ghid-logo-dark { display: block; }
-.ghid-brand-title { font-family: var(--titleFont); font-weight: 800; font-size: 1.3rem; line-height: 1.15; letter-spacing: -.01em; }
+.ghid-brand-title { font-family: var(--titleFont); font-weight: 800; font-size: 1.02rem; line-height: 1.2; letter-spacing: -.01em; }
 .ghid-brand-scurt { display: none; }
 .ghid-rainbow { display: flex; gap: 4px; margin-top: .6rem; }
 .ghid-rainbow span { height: 4px; flex: 1; border-radius: 2px; }

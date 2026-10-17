@@ -1,9 +1,9 @@
-# Ghid digital pentru asociații
+# Ghidul Bunelor Practici în utilizarea Inteligenței Artificiale în activitatea ONG-urilor și Grupurilor de Inițiativă
 
 Ghid interactiv cu instrumente utile pentru asociații și ONG-uri, realizat pentru
 **ProActive Group Moldova** ca o continuare a programului „AI în Comunități”.
 
-**Site-ul:** https://nudoarmetudor.github.io/ghid-digital-pagm/
+**Site-ul:** https://ghid.lappsus.com/ (copie: https://nudoarmetudor.github.io/ghid-digital-pagm/)
 
 ## Cum e organizat depozitul
 

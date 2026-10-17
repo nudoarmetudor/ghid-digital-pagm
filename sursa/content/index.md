@@ -1,5 +1,5 @@
 ---
-title: Ghid digital pentru asociații
+title: Ghidul Bunelor Practici în utilizarea Inteligenței Artificiale în activitatea ONG-urilor și Grupurilor de Inițiativă
 description: Instrumente gratuite sau accesibile, explicate pas cu pas, pentru asociațiile și grupurile de inițiativă care vor să comunice mai bine, să scrie proiecte, să lucreze împreună și să folosească AI cu cap.
 ---
 

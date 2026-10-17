@@ -1,5 +1,10 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import { pathToRoot, joinSegments } from "../../util/path"
+import { BandaLogouri, bandaLogouriCss } from "./logouri"
+
+// Textul de vizibilitate cerut de finanțator, reprodus cuvânt cu cuvânt.
+export const DISCLAIMER_RO =
+  "Acest material/acest video/această activitate a fost produs(ă)/realizată cu suportul financiar al Uniunii Europene, în cadrul proiectului INSPIRĂ Moldova. Conținutul acesteia/acestuia reprezintă responsabilitatea exclusivă a proiectului „PRO-Active Digital Communities – Ambasadori Digitali în Comunități Rurale”, implementat de AO ProActive Group Moldova, în parteneriat cu Alianța Asociațiilor de Băștinași din Moldova. Conținutul aparține AO ProActive Group Moldova și nu reflectă în mod necesar viziunea Uniunii Europene."
 
 const Subsol: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const baseDir = pathToRoot(fileData.slug!)
@@ -7,11 +12,13 @@ const Subsol: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProp
   return (
     <footer class={`ghid-subsol ${displayClass ?? ""}`}>
       <div class="ghid-rainbow" aria-hidden="true"><span /><span /><span /><span /><span /></div>
+      <BandaLogouri baseDir={baseDir} />
+      <p class="ghid-disclaimer">{DISCLAIMER_RO}</p>
       <div class="ghid-subsol-rand">
         <p>
-          Ghid realizat pentru <strong>ProActive Group Moldova</strong>, ca o continuare a programului
-          „AI în Comunități”. Conținut și design:{" "}
-          <a href="https://lappsus.com" target="_blank" rel="noopener">Tudor Lapp, Lappsus</a>.
+          Autori: <strong>Tudor Lapp</strong> (
+          <a href="https://lappsus.com" target="_blank" rel="noopener">Lappsus</a>) și{" "}
+          <strong>Victor Babcinețchi</strong>.
         </p>
         <a class="ghid-subsol-lappsus" href="https://lappsus.com" target="_blank" rel="noopener" aria-label="Lappsus">
           <img class="ghid-logo-light" src={img("lappsus-dark.png")} alt="Lappsus" width="84" height="30" />
@@ -31,6 +38,7 @@ const Subsol: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProp
 Subsol.css = `
 .ghid-subsol { margin: 3rem 0 4rem; font-size: .92rem; color: var(--darkgray); }
 .ghid-subsol .ghid-rainbow { margin-bottom: 1.2rem; display: flex; }
+.ghid-disclaimer { font-size: .8rem; line-height: 1.5; margin: 1rem 0 1.2rem; opacity: .85; }
 .ghid-subsol-rand { display: flex; gap: 1.5rem; align-items: center; justify-content: space-between; }
 .ghid-subsol-rand p { margin: 0; }
 .ghid-subsol-lappsus { flex: none; background: none !important; }
@@ -40,6 +48,7 @@ Subsol.css = `
 :root[saved-theme="dark"] .ghid-subsol .ghid-logo-dark { display: block; }
 .ghid-subsol-mic { opacity: .75; font-size: .82rem; margin-top: 1rem; }
 @media all and (max-width: 800px) { .ghid-subsol-rand { flex-direction: column; align-items: flex-start; gap: .8rem; } }
+${bandaLogouriCss}
 `
 
 export default (() => Subsol) satisfies QuartzComponentConstructor
