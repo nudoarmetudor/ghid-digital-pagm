@@ -1,6 +1,7 @@
 import { joinSegments } from "../../util/path"
 
-// Banda de logo-uri a proiectului, în ordinea din LOGOURI.pptx primit de la PAGM.
+// Logo-urile din LOGOURI.pptx primit de la PAGM: banda lungă a consorțiului INSPIRĂ Moldova,
+// apoi rândul cu UE, People in Need, PAGM și Alianța Asociațiilor de Băștinași.
 // Stă pe fond alb în ambele teme, ca logo-urile să rămână lizibile.
 const LOGOURI = [
   { fisier: "ue.png", alt: "Finanțat de Uniunea Europeană", clasa: "logo-ue" },
@@ -12,6 +13,11 @@ const LOGOURI = [
 export function BandaLogouri({ baseDir }: { baseDir: string }) {
   return (
     <div class="banda-logouri" role="group" aria-label="Finanțatori și parteneri">
+      <img
+        class="logo-inspira"
+        src={joinSegments(baseDir, "static", "logouri", "inspira-moldova.png")}
+        alt="INSPIRĂ Moldova: Finanțat de Uniunea Europeană, European Partnership for Democracy, ALDA, CONTACT, Centrul de Politici și Reforme, Democracy Reporting International, People in Need"
+      />
       {LOGOURI.map((l) => (
         <img class={l.clasa} src={joinSegments(baseDir, "static", "logouri", l.fisier)} alt={l.alt} />
       ))}
@@ -23,6 +29,7 @@ export const bandaLogouriCss = `
 .banda-logouri { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.2rem 2.2rem;
   background: #fff; border: 1px solid var(--lightgray); border-radius: 12px; padding: 1rem 1.4rem; }
 .banda-logouri img { display: block; width: auto; max-width: 100%; }
+.banda-logouri .logo-inspira { flex: 0 0 100%; width: 100%; max-width: 760px; height: auto; margin: 0 auto .4rem; }
 .banda-logouri .logo-ue { height: 76px; }
 .banda-logouri .logo-pin { height: 48px; }
 .banda-logouri .logo-pagm { height: 62px; }
