@@ -1,11 +1,10 @@
 import { joinSegments } from "../../util/path"
 
 // Logo-urile din LOGOURI.pptx primit de la PAGM: banda lungă a consorțiului INSPIRĂ Moldova,
-// apoi rândul cu UE, People in Need, PAGM și Alianța Asociațiilor de Băștinași.
+// apoi PAGM și Alianța Asociațiilor de Băștinași. UE și People in Need sunt deja în banda lungă,
+// deci nu se repetă (cererea lui Tudor, 2026-10-17).
 // Stă pe fond alb în ambele teme, ca logo-urile să rămână lizibile.
 const LOGOURI = [
-  { fisier: "ue.png", alt: "Finanțat de Uniunea Europeană", clasa: "logo-ue" },
-  { fisier: "people-in-need.png", alt: "People in Need", clasa: "logo-pin" },
   { fisier: "proactive-group-moldova.png", alt: "ProActive Group Moldova", clasa: "logo-pagm" },
   { fisier: "alianta-bastinasi.png", alt: "Alianța Asociațiilor de Băștinași din Moldova", clasa: "logo-aab" },
 ]
