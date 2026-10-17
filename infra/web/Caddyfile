@@ -1,0 +1,29 @@
+# Internal server behind the box's public Caddy (nudoarmetudor/lappsus,
+# infra/caddy/Caddyfile, block ghid.lappsus.com). TLS and security headers are
+# added there; this only serves the built guide and sets caching.
+{
+	auto_https off
+	admin off
+}
+
+:80 {
+	root * /srv
+	encode zstd gzip
+
+	handle /healthz {
+		respond "ok" 200
+	}
+
+	# Pages and the search index change with every build; ask each time.
+	@revalidate path / *.html *.js *.css *.json *.xml
+	header @revalidate Cache-Control "no-cache"
+
+	# Quartz links pages without ".html" (/despre, /nevoi/...): try the file,
+	# then the page, then a folder's index, before Quartz's own 404 page.
+	try_files {path} {path}.html {path}/index.html
+	file_server
+	handle_errors 404 {
+		rewrite * /404.html
+		file_server
+	}
+}
