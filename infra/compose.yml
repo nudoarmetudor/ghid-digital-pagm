@@ -1,0 +1,29 @@
+# Ghid digital pentru asociații on the VPS: one static file server.
+#
+#   docker compose -f infra/compose.yml up -d
+#
+# Serves the built guide in ../docs and nothing else of this repository. The
+# public route lives in the reverse proxy that owns ports 80/443 on the box
+# (nudoarmetudor/lappsus, infra/caddy/Caddyfile), which reaches this container
+# over the shared external network `edge` under the alias `ghid-web`.
+# Published on loopback only, for the deploy check.
+name: ghid
+
+services:
+  web:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    volumes:
+      # Directories, not single files: git replaces files rather than editing
+      # them in place, and a single-file bind mount would stay on the old inode.
+      - ./web:/etc/caddy:ro
+      - ../docs:/srv:ro
+    ports:
+      - "127.0.0.1:3300:80"
+    networks:
+      edge:
+        aliases: [ghid-web]
+
+networks:
+  edge:
+    external: true
