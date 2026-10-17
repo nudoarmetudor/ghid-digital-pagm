@@ -1,0 +1,166 @@
+/* Așezarea în pagină a ghidului tipărit (WeasyPrint). Fonturile și culorile sunt ale site-ului. */
+
+/* Urbanist vine în două bucăți; a doua are ă, ș, ț și e luată literă cu literă, ca rezervă. */
+@font-face { font-family: "Urbanist Ext"; font-weight: 100 900;
+  src: url("STATIC/fonts/urbanist-normal-latin-ext.woff2") format("woff2"); }
+@font-face { font-family: "Urbanist"; font-weight: 100 900;
+  src: url("STATIC/fonts/urbanist-normal-latin.woff2") format("woff2"); }
+@font-face { font-family: "Onest"; font-weight: 100 900;
+  src: url("STATIC/fonts/onest-var.woff2") format("woff2"); }
+
+:root {
+  --mov: #7f248d;
+  --roz: #e82e61;
+  --text: #22252f;
+  --gri: #5b6072;
+  --linie: #d9dbe3;
+  --fond: #f5f3f8;
+}
+
+@page {
+  size: A4;
+  margin: 20mm 20mm 22mm 20mm;
+  @bottom-center { content: counter(page); font: 500 9pt "Onest"; color: var(--gri); }
+}
+@page :left {
+  margin-left: 18mm; margin-right: 24mm;
+  @top-left { content: "Ghidul Bunelor Practici AI"; font: 500 8pt "Onest"; color: var(--gri); }
+  @bottom-center { content: none; }
+  @bottom-left { content: counter(page); font: 500 9pt "Onest"; color: var(--gri); }
+}
+@page :right {
+  margin-left: 24mm; margin-right: 18mm;
+  @top-right { content: string(capitol); font: 500 8pt "Onest"; color: var(--gri); }
+  @bottom-center { content: none; }
+  @bottom-right { content: counter(page); font: 500 9pt "Onest"; color: var(--gri); }
+}
+@page coperta { margin: 0; @top-left { content: none; } @top-right { content: none; }
+  @bottom-left { content: none; } @bottom-right { content: none; } }
+@page simplu { @top-left { content: none; } @top-right { content: none; }
+  @bottom-left { content: none; } @bottom-right { content: none; } }
+
+html { font-family: "Onest", sans-serif; font-size: 10.5pt; line-height: 1.5; color: var(--text); }
+body { margin: 0; }
+
+h1, h2, h3, h4, h5 { font-family: "Urbanist", "Urbanist Ext", sans-serif; line-height: 1.2; color: var(--text);
+  break-after: avoid; }
+h1 { font-size: 26pt; font-weight: 800; margin: 0 0 6mm; }
+h2 { font-size: 19pt; font-weight: 800; margin: 0 0 3mm; }
+h3 { font-size: 13pt; font-weight: 700; margin: 7mm 0 2mm; color: var(--zona, var(--mov)); }
+h4 { font-size: 11pt; font-weight: 700; margin: 5mm 0 1.5mm; }
+p { margin: 0 0 2.5mm; orphans: 2; widows: 2; }
+ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+li { margin-bottom: 1mm; }
+li > p { margin: 0; }
+strong { font-weight: 700; }
+code { font-family: "DejaVu Sans Mono", monospace; font-size: 8.8pt; background: var(--fond);
+  padding: 0 1mm; border-radius: 1mm; }
+pre { font-family: "DejaVu Sans Mono", monospace; font-size: 8.6pt; line-height: 1.45;
+  white-space: pre-wrap; background: #fff; border: .3mm solid var(--linie); border-left: 1.2mm solid var(--mov);
+  border-radius: 1.5mm; padding: 2.5mm 3mm; margin: 2mm 0 3mm; break-inside: avoid; }
+pre code { background: none; padding: 0; font-size: inherit; }
+img { max-width: 100%; }
+table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 2mm 0 4mm; }
+th, td { border: .3mm solid var(--linie); padding: 1.5mm 2mm; vertical-align: top; text-align: left; }
+th { background: var(--fond); font-family: "Urbanist", "Urbanist Ext"; font-weight: 700; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+
+/* Linkuri: pe hârtie se văd pagina sau adresa. */
+a { color: inherit; text-decoration: none; }
+a.int { color: var(--mov); font-weight: 600; }
+a.int::after { content: " (p. " target-counter(attr(href url), page) ")"; font-weight: 400;
+  color: var(--gri); font-size: .9em; }
+a.ext { font-weight: 600; }
+.url { font-size: .85em; color: var(--gri); overflow-wrap: anywhere; font-weight: 400; }
+
+/* Căsuțele listelor de verificare */
+li:has(> .casuta), li.task-list-item { list-style: none; margin-left: -5mm; }
+.casuta { display: inline-block; width: 3.4mm; height: 3.4mm; border: .35mm solid var(--gri);
+  border-radius: .7mm; margin-right: 2mm; vertical-align: -.5mm; }
+
+/* Casete (callout-uri) */
+.callout { border-radius: 2mm; padding: 3mm 4mm 1.5mm; margin: 3mm 0 4mm; background: var(--fond);
+  border-left: 1.5mm solid var(--mov); break-inside: avoid; }
+.callout-titlu { font-family: "Urbanist", "Urbanist Ext"; font-weight: 800; font-size: 10.5pt; margin-bottom: 1.5mm; }
+.callout-abstract { border-left-color: var(--zona, var(--mov)); background: #f6f6f9; }
+.callout-example { border-left-color: var(--zona, var(--mov)); background: #fbf8ef; }
+.callout-tip { border-left-color: #3aa936; background: #f1f8f0; }
+.callout-warning, .callout-danger { border-left-color: #e0a800; background: #fdf8e8; }
+.callout-danger { border-left-color: #e91348; background: #fdf0f2; }
+.callout-info, .callout-note { border-left-color: #2f9bd8; background: #eef6fb; }
+.callout-quote { border-left-color: var(--gri); font-style: italic; }
+.callout pre { break-inside: auto; }
+.impreuna { break-inside: avoid; }
+
+/* Coperta */
+.coperta { page: coperta; height: 297mm; position: relative; padding: 0 22mm; box-sizing: border-box; }
+.curcubeu { display: flex; height: 7mm; margin: 0 -22mm; }
+.curcubeu span { flex: 1; }
+.coperta .pagm { height: 26mm; margin: 26mm 0 14mm; }
+.titlu-carte { font-size: 30pt; line-height: 1.12; font-weight: 800; color: var(--mov); margin: 0 0 8mm;
+  string-set: none; }
+.subtitlu { font-size: 13pt; line-height: 1.45; color: var(--gri); margin: 0 0 10mm; max-width: 150mm; }
+.autori { font-family: "Urbanist", "Urbanist Ext"; font-weight: 700; font-size: 13pt; }
+.coperta .jos { position: absolute; left: 22mm; right: 22mm; bottom: 22mm; }
+.logouri { text-align: center; }
+.logouri .inspira { width: 100%; max-width: 160mm; }
+.logouri .parteneri { display: flex; justify-content: center; align-items: center; gap: 14mm; margin-top: 4mm; }
+.logouri .parteneri img { height: 15mm; }
+
+/* Pagina de gardă */
+.garda { page: simplu; break-before: page; height: 250mm; display: flex; flex-direction: column;
+  justify-content: flex-end; font-size: 9pt; line-height: 1.5; }
+.garda .g-titlu { font-family: "Urbanist", "Urbanist Ext"; font-weight: 800; font-size: 13pt; line-height: 1.25;
+  color: var(--mov); margin-bottom: 5mm; }
+.garda .licenta { margin-top: 3mm; }
+.disclaimer { font-size: 8.5pt; color: var(--gri); border-top: .3mm solid var(--linie); padding-top: 3mm;
+  margin-top: 3mm; }
+
+/* Cuprinsul */
+.cuprins { page: simplu; break-before: page; }
+.cuprins ol { list-style: none; padding: 0; margin: 0; }
+.cuprins li { margin: 0; }
+.cuprins a { display: block; }
+.cuprins a::after { content: leader(".") target-counter(attr(href url), page); color: var(--gri); }
+.cuprins .n1 { font-family: "Urbanist", "Urbanist Ext"; font-weight: 800; font-size: 12pt; margin-top: 4mm; }
+.cuprins .n2 { font-size: 10pt; padding-left: 6mm; }
+.cuprins .n3 { font-size: 9pt; padding-left: 12mm; color: var(--gri); }
+
+/* Capitole și pagini */
+.capitol { break-before: page; string-set: capitol attr(data-titlu); }
+.capitol::before { content: ""; display: block; height: 3mm; width: 40mm; background: var(--zona, var(--mov));
+  border-radius: 1.5mm; margin: 18mm 0 6mm; }
+.nr-capitol { font-family: "Urbanist", "Urbanist Ext"; font-weight: 700; font-size: 11pt; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--zona, var(--mov)); margin-bottom: 1mm; }
+.capitol > h1 { font-size: 30pt; }
+.capitol > .descriere { font-size: 13pt; }
+.pagina { break-before: page; }
+.eticheta { font-family: "Urbanist", "Urbanist Ext"; font-weight: 700; font-size: 9pt; text-transform: uppercase;
+  letter-spacing: .08em; color: var(--zona, var(--mov)); margin-bottom: 1mm; }
+.descriere { font-size: 11.5pt; color: var(--gri); margin-bottom: 4mm; }
+.fisa { display: grid; grid-template-columns: 38mm 1fr; border: .3mm solid var(--linie);
+  border-left: 1.5mm solid var(--zona, var(--mov)); border-radius: 2mm; padding: 2.5mm 4mm; margin: 0 0 4mm;
+  font-size: 9.5pt; }
+.fisa dt { font-weight: 700; margin: .6mm 0; }
+.fisa dd { margin: .6mm 0; }
+.insigne { margin: 0 0 4mm; }
+.insigne span { display: inline-block; border: .3mm solid var(--zona, var(--mov)); border-radius: 3mm;
+  padding: .5mm 3mm; margin-right: 2mm; font-size: 9pt; font-weight: 600; }
+table.instrumente { table-layout: fixed; font-size: 8.5pt; }
+table.instrumente th:nth-child(1) { width: 26%; }
+table.instrumente th:nth-child(2) { width: 38%; }
+table.instrumente th:nth-child(3) { width: 21%; }
+table.instrumente th:nth-child(4) { width: 15%; }
+
+/* Coperta din spate */
+.spate { page: coperta; break-before: page; height: 297mm; position: relative; padding: 0 22mm;
+  box-sizing: border-box; text-align: center; }
+.spate .s-titlu { font-family: "Urbanist", "Urbanist Ext"; font-weight: 800; font-size: 16pt; color: var(--mov);
+  padding-top: 40mm; margin-bottom: 8mm; }
+.spate .qr { width: 45mm; }
+.spate .s-adresa { font-family: "Urbanist", "Urbanist Ext"; font-weight: 800; font-size: 15pt; margin-top: 3mm; }
+.spate .jos { position: absolute; left: 22mm; right: 22mm; bottom: 18mm; }
+.spate .disclaimer { text-align: left; }
+.licenta-scurt { font-size: 8.5pt; color: var(--gri); }
+.spate .curcubeu { position: absolute; left: 0; right: 0; bottom: 0; margin: 0; }

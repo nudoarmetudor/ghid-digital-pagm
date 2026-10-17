@@ -37,6 +37,19 @@ jobs:
         working-directory: sursa
         run: npx quartz build -o ../_site
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: sursa/carte/cerinte.txt
+
+      - name: Construiește PDF-ul tipăribil
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq libpango-1.0-0 libpangoft2-1.0-0 fonts-dejavu-core
+          pip install -r sursa/carte/cerinte.txt
+          python sursa/carte/construieste.py --iesire _site/ghidul-bunelor-practici-ai.pdf
+
       - name: Copiază site-ul în rădăcină
         run: bash .github/publica.sh _site
 

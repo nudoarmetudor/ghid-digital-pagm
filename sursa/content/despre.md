@@ -37,3 +37,11 @@ Adresa: https://ghid.lappsus.com/
 Acest material a fost produs și realizat cu suportul financiar al Uniunii Europene, în cadrul proiectului INSPIRĂ Moldova. Conținutul acestuia reprezintă responsabilitatea exclusivă a proiectului „PRO-Active Digital Communities – Ambasadori Digitali în Comunități Rurale”, implementat de AO ProActive Group Moldova, în parteneriat cu Alianța Asociațiilor de Băștinași din Moldova. Conținutul aparține AO ProActive Group Moldova și nu reflectă în mod necesar viziunea Uniunii Europene.
 
 This material/publication/video/activity was produced/took place with the financial support of the European Union within the framework of the INSPIRED Moldova project. Its content represents the sole responsibility of the project “PRO-Active Digital Communities – Digital Ambassadors in Rural Communities”, implemented by ProActive Group Moldova AO in partnership with the Alliance of Hometown Associations of Moldova. The content belongs to ProActive Group Moldova AO and does not necessarily reflect the views of the European Union.
+
+## Versiunea tipărită
+
+Tot ghidul, așezat ca o carte A4, cu cuprins și trimiteri la pagină: [descărcați PDF-ul](https://ghid.lappsus.com/ghidul-bunelor-practici-ai.pdf). Se reface singur la fiecare schimbare din ghid.
+
+## Licență
+
+© 2026 AO ProActive Group Moldova. Textul ghidului este publicat sub licența [Creative Commons Atribuire-Partajare în Condiții Identice 4.0 Internațional (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/deed.ro): îl puteți copia, tipări, traduce și adapta, inclusiv în scop comercial, cu condiția să menționați sursa și autorii și să publicați versiunile adaptate sub aceeași licență. Logourile Uniunii Europene, ale partenerilor și ale programelor nu intră sub această licență și aparțin titularilor lor. Codul site-ului este sub licența MIT.

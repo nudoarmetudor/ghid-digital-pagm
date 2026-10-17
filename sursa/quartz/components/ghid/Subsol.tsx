@@ -26,6 +26,17 @@ const Subsol: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProp
         </a>
       </div>
       <p class="ghid-subsol-mic">
+        Text © 2026 AO ProActive Group Moldova, sub licența{" "}
+        <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ro" target="_blank" rel="noopener">
+          CC BY-SA 4.0
+        </a>
+        ; logourile aparțin titularilor.{" "}
+        <a href={joinSegments(baseDir, "ghidul-bunelor-practici-ai.pdf")} data-router-ignore>
+          Ghidul în PDF, de tipărit
+        </a>
+        .
+      </p>
+      <p class="ghid-subsol-mic">
         Instrumentele și ofertele lor se schimbă des. Dacă un pas nu mai arată la fel, căutați
         ghidul oficial din linkul „Tutoriale” al paginii. Construit cu{" "}
         <a href="https://quartz.jzhao.xyz/" target="_blank" rel="noopener">Quartz</a>; sursa pe{" "}
