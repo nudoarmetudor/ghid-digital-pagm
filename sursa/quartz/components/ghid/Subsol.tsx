@@ -4,7 +4,7 @@ import { BandaLogouri, bandaLogouriCss } from "./logouri"
 
 // Textul de vizibilitate cerut de finanțator, reprodus cuvânt cu cuvânt.
 export const DISCLAIMER_RO =
-  "Acest material/acest video/această activitate a fost produs(ă)/realizată cu suportul financiar al Uniunii Europene, în cadrul proiectului INSPIRĂ Moldova. Conținutul acesteia/acestuia reprezintă responsabilitatea exclusivă a proiectului „PRO-Active Digital Communities – Ambasadori Digitali în Comunități Rurale”, implementat de AO ProActive Group Moldova, în parteneriat cu Alianța Asociațiilor de Băștinași din Moldova. Conținutul aparține AO ProActive Group Moldova și nu reflectă în mod necesar viziunea Uniunii Europene."
+  "Acest material a fost produs și realizat cu suportul financiar al Uniunii Europene, în cadrul proiectului INSPIRĂ Moldova. Conținutul acestuia reprezintă responsabilitatea exclusivă a proiectului „PRO-Active Digital Communities – Ambasadori Digitali în Comunități Rurale”, implementat de AO ProActive Group Moldova, în parteneriat cu Alianța Asociațiilor de Băștinași din Moldova. Conținutul aparține AO ProActive Group Moldova și nu reflectă în mod necesar viziunea Uniunii Europene."
 
 const Subsol: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const baseDir = pathToRoot(fileData.slug!)
