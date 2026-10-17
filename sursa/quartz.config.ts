@@ -2,19 +2,19 @@ import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
 
 /**
- * Ghid digital pentru asociații (ProActive Group Moldova).
+ * Ghidul Bunelor Practici AI pentru ONG-uri (ProActive Group Moldova).
  * Fonturile sunt servite de pe site (quartz/static/fonts), nu de la Google:
  * vizitatorii nu își trimit adresa IP unui terț doar ca să citească ghidul.
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Ghid digital pentru asociații",
-    pageTitleSuffix: " · Ghid digital PAGM",
+    pageTitle: "Ghidul Bunelor Practici în utilizarea Inteligenței Artificiale în activitatea ONG-urilor și Grupurilor de Inițiativă",
+    pageTitleSuffix: " · Ghidul Bunelor Practici AI",
     enableSPA: true,
     enablePopovers: true,
     analytics: null,
     locale: "ro-RO",
-    baseUrl: "nudoarmetudor.github.io/ghid-digital-pagm",
+    baseUrl: "ghid.lappsus.com",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {

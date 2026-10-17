@@ -1,6 +1,8 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "../types"
 import { resolveRelative, FullSlug } from "../../util/path"
 import { ZONE, zonaDin } from "./zone"
+import { BandaLogouri } from "./logouri"
+import { pathToRoot } from "../../util/path"
 
 // Pagina principală: cardurile pe nevoi și selectorul „Ce vreți să faceți azi?”.
 const Acasa: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) => {
@@ -22,6 +24,9 @@ const Acasa: QuartzComponent = ({ fileData, allFiles }: QuartzComponentProps) =>
   return (
     <div class="acasa">
       {fileData.frontmatter?.description && <p class="acasa-lead">{fileData.frontmatter.description}</p>}
+      <div class="acasa-logouri">
+        <BandaLogouri baseDir={pathToRoot(aici)} />
+      </div>
       <section class="acasa-nevoi" aria-labelledby="acasa-nevoi-t">
         <h2 id="acasa-nevoi-t">De ce are nevoie asociația voastră?</h2>
         <div class="acasa-carduri">
@@ -112,6 +117,7 @@ document.addEventListener("nav", () => {
 
 Acasa.css = `
 .acasa h2 { margin-top: 2.2rem; }
+.acasa-logouri { margin: 1.4rem 0 .4rem; }
 .acasa-lead { font-size: 1.2rem; line-height: 1.5; color: var(--darkgray); margin-top: .2rem; max-width: 40rem; }
 .acasa-carduri { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: .9rem; }
 .acasa a.acasa-card { line-height: 1.4; display: flex; flex-direction: column; gap: .4rem; padding: 1rem 1.1rem 1rem; border-radius: 12px;

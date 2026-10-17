@@ -3,7 +3,9 @@ title: Despre ghid
 description: Cine a făcut ghidul, pentru cine și cum îl puteți îmbunătăți.
 ---
 
-Ghidul a fost realizat pentru **ProActive Group Moldova**, ca o continuare a programului „AI în Comunități” și a sesiunilor cu academia și laboratoarele proiectului. Conținutul și designul sunt de [Tudor Lapp, Lappsus](https://lappsus.com).
+Ghidul a fost realizat în cadrul proiectului „PRO-Active Digital Communities – Ambasadori Digitali în Comunități Rurale”, implementat de AO ProActive Group Moldova în parteneriat cu Alianța Asociațiilor de Băștinași din Moldova. Continuă sesiunile „AI în Comunități” cu academia și laboratoarele proiectului.
+
+**Autori:** Tudor Lapp ([Lappsus](https://lappsus.com)) și Victor Babcinețchi.
 
 ## Pentru cine este
 
@@ -28,4 +30,10 @@ Pentru afișe, prezentări și mesaje către membri:
 
 ![Cod QR spre ghid](imagini/qr-ghid.png)
 
-Adresa: https://nudoarmetudor.github.io/ghid-digital-pagm/
+Adresa: https://ghid.lappsus.com/
+
+## Finanțare
+
+Acest material/acest video/această activitate a fost produs(ă)/realizată cu suportul financiar al Uniunii Europene, în cadrul proiectului INSPIRĂ Moldova. Conținutul acesteia/acestuia reprezintă responsabilitatea exclusivă a proiectului „PRO-Active Digital Communities – Ambasadori Digitali în Comunități Rurale”, implementat de AO ProActive Group Moldova, în parteneriat cu Alianța Asociațiilor de Băștinași din Moldova. Conținutul aparține AO ProActive Group Moldova și nu reflectă în mod necesar viziunea Uniunii Europene.
+
+This material/publication/video/activity was produced/took place with the financial support of the European Union within the framework of the INSPIRED Moldova project. Its content represents the sole responsibility of the project “PRO-Active Digital Communities – Digital Ambassadors in Rural Communities”, implemented by ProActive Group Moldova AO in partnership with the Alliance of Hometown Associations of Moldova. The content belongs to ProActive Group Moldova AO and does not necessarily reflect the views of the European Union.
